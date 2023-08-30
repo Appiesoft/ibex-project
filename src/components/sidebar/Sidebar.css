@@ -1,0 +1,16 @@
+/* .boxactive{
+    display: flex ;
+    justify-content: space-between !important;
+} */
+.dropdown_color {
+  background-color: #1d2531b0;
+}
+.nav-item a {
+  color: #b7c0cd;
+  font-size: 14px;
+}
+.nav-item a:hover{
+    color: #fff;
+    font-size: 14px;
+  }
+  

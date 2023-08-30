@@ -1,0 +1,160 @@
+/* main side bar  */
+.man_event_right {
+    width: 85%;
+}
+.man_main_flex_event {
+    display: flex;
+    width: 100%;
+    height: auto;
+  }
+  /* main side bar end  */
+
+  .top_btns{
+    display: flex;
+    column-gap: 10px;
+  }
+
+  .sav_newfilter a {
+    font-size: 15px;
+}
+.sav_newfilter{
+    column-gap: 8px;
+    row-gap: 10px;
+    align-items: center;
+}
+
+.whole_box.user-row {
+    display: flex;
+    align-items: center;
+    column-gap: 98px;
+}
+.whole_box {
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 0.25rem;
+    flex-flow: row;
+    width: 100% !important;
+    padding: 0px 10px;
+}
+
+.whole_box.user-row > a {
+    display: contents;
+}
+.left2_div {
+    padding: 0 0 0 10px;
+    box-sizing: border-box;
+}
+.left2_div img {
+    width: 90px;
+    border-radius: 76px;
+    height: 90px;
+    object-fit: cover;
+}
+.left2_div h4 {
+    color: #7b848a;
+    font-size: 10px;
+    text-align: center;
+    margin: 8px 0 0 0;
+}
+.left2_div h4 {
+    color: #7b848a;
+    font-size: 10px;
+    text-align: center;
+    margin: 8px 0 0 0;
+}
+.left3_div {
+    width: -webkit-fill-available;
+}
+.top_sav {
+    display: flex;
+    flex-wrap: unset;
+    column-gap: 44px;
+    margin: 0 0 15px 0;
+}
+.sav_txt1 span {
+    font-size: 16px;
+    color: #7b848a;
+    font-family: roboto-light, Arial, sans-serif;
+}
+.sav_txt1 h6 {
+    font-size: 13px;
+    color: #7b848a;
+    font-family: roboto-light, Arial, sans-serif;
+}
+
+.whole_box>div {
+    display: inline-block;
+    vertical-align: middle;
+}
+.left_div .user-role {
+    font-size: 12px;
+    display: none;
+}
+.bgcolorDrop{
+    background-color: #17a2b8 !important;
+    border-color: #17a2b8  !important;
+}
+
+
+.step-item:not(:first-child)::before {
+    content: '';
+    background-color:lightgray; /* Use the appropriate color code for red-200 */
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    right: 50%;
+    top: 33.33%;
+    transform: translateY(-50%);
+  }
+  
+  .step {
+    width: 2.5rem; /* Equivalent to w-10 in Tailwind CSS */
+    height: 2.5rem; /* Equivalent to h-10 in Tailwind CSS */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    position: relative;
+    background-color:lightgray; /* Use the appropriate color code for bg-slate-700 */
+    border-radius: 9999px; /* Equivalent to rounded-full in Tailwind CSS */
+    font-weight: 600; /* Equivalent to font-semibold in Tailwind CSS */
+    color: #ffffff; /* Equivalent to text-white in Tailwind CSS */
+  }
+  
+  .active .step {
+    background-color: #17a2b8; /* Use the appropriate color code for bg-sky-600 */
+  }
+  .complete .step {
+    background-color: #17a2b8; /* Use the appropriate color code for bg-green-600 */
+  
+  }
+  .complete p {
+  color: #17a2b8;
+  }
+  .complete:not(:first-child)::before,
+  .active:not(:first-child)::before {
+    content: '';
+    background-color: #17a2b8; /* Use the appropriate color code for bg-green-600 */
+  }
+  .profileBtn{
+    background-color: white;
+        transform: translateY(43px);
+        width: max-content;
+        left: -69px;
+        top: -5px;
+        color: #7b848a;
+  }
+  .profileBtn a{
+    color: #7b848a;
+  }
+@media only screen and (min-width: 1351px){
+.whole_box .left2_div img {
+    width: 83px !important;
+    height: 80px !important;
+}
+.left3_div .top_sav {
+    margin-left: 44px !important;
+}
+}
