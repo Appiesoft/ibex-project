@@ -1,0 +1,20 @@
+.dropdown-menu a{
+    text-decoration: none !important;
+  color: #646b67 !important;
+      }
+      .table_container {
+        min-width: 20vh !important;
+        max-height: 62vh;
+        max-height: calc(100vh - (170px + 9.9rem));
+        overflow-x: scroll;
+    }
+    
+    .table_container::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+    
+    .table_container::-webkit-scrollbar-thumb {
+        background-color: #dadada;
+        border-radius: 2px;
+    }

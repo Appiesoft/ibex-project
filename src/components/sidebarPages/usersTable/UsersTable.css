@@ -1,5 +1,9 @@
 .btn-profile{
-    background-color: #f8f9fa;
+  background-color: white;
+  transform: translateY(43px);
+  width: max-content;
+  color: #7b848a;
+
   
     }
     .btn-profile a {
@@ -7,4 +11,7 @@
       text-decoration: none;
     
     }
-    
+    .bgDrop{
+      background-color:#17a2b8 !important;
+      color: white !important;
+    }

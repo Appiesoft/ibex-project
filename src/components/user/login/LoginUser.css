@@ -1,0 +1,122 @@
+.loginbox {
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0px !important;
+    max-width: 100%;
+    width: 100%;
+    padding: 0px;
+}
+.combinedformrow {
+    box-shadow: 2px 3px 29px -14px #0000008f;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(0%);
+    width: 100%;
+    box-sizing: border-box;
+}
+.combinedformrow .loginContent h2 {
+    color: #333;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 21px 20px 10px 20px;
+}
+.combinedformrow img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+}
+.rightcombined .card {
+    background: transparent;
+    border: none;
+}
+.rightcombined .card-body {
+    padding: 0px 50px 0 0;
+}
+.form-wrapper.active {
+    display: block;
+}
+.rightcombined .card h6 {
+    font-size: 30px;
+    color: #000000 !important;
+    text-align: left !important;
+    text-transform: capitalize !important;
+    margin: 0 0 25px 0 !important;
+}
+.rightcombined .form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+.combinedformrow .form-group i {    
+    position: absolute;
+    padding-left: 12px;
+    padding-top: 12px;
+}
+.rightcombined .card input:not([type="submit"]) {
+    background-color:#b6f0ff8a !important;
+    border: 1px solid #97979791;
+    padding: 5px 20px 6px 30px;
+    font-size: 18px;
+    font-family: 'Proxima Nova Rg' !important;
+    color: #a8a6a6 !important;
+    border-radius: 5px !important;
+    min-height: 45px;
+}
+.rightcombined .form-group.paswrd {
+    margin-bottom: 2px;
+}
+.rmber {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.rightcombined .rmber p {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+.card-body form label {
+    font-size: 15px;
+    font-weight: 500;
+}
+.combinedformrow .card a .forgot {
+    text-align: right;
+    font-size: 16px;
+    color: #333333 !important;
+    display: inline-block;
+}
+/* .combinedformrow .card a {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+} */
+.rightcombined .btn-success[type="submit"] {
+    color: #fff;
+    background: #17a2b8;
+    border-color: #17a2b8;
+    border-radius: 5px !important;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 29px;
+    text-transform: capitalize;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.rightcombined .sign-up-controls {
+    color: #a8a6a6 !important;
+    font-size: 18px;
+}
+a{
+    text-decoration: none !important;
+}
+.rightcombined  a .form-change{
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #17a2b8 !important;
+    
+}

@@ -23,11 +23,11 @@ function Header({OpenSidebar}) {
             <BsFillEnvelopeFill className='icon'/>
             <BsPersonCircle className='icon'/>
         </div> */}
-        <div class="container-fluid mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
-            <span class="flex title-font font-medium items-center text-gray-900 md:mb-0 ml-auto w-10 ">
+        <div class="container-fluid mx-auto flex  p-2 flex-col md:flex-row  sm:flex-row flex-row items-center">
+            <span class="flex title-font font-medium items-center text-gray-900 md:mb-0 ml-auto w-10  pe-2 pe-md-0">
              <img src={user} alt="user" className="rounded-circle"/>
             </span>
-            <nav class=" md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center me-4">
+            <nav class=" md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center me-4 cursor-pointer">
               <span
                 class="mr-5 hover:text-danger"
                 onClick={toggleDropdown}

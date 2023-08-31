@@ -13,7 +13,7 @@ function Home() {
     "GTE",
     "Upload Fees & all",
     "COE",
-    "File lodgement & all",
+    "File lodgement  & all",
     "Result",
   ];
   const [currentStep, setCurrentStep] = useState(1);
@@ -24,7 +24,7 @@ function Home() {
   };
   return (
     <main className="main-container">
-      <div class="col-md-9 col-lg-10 col-xl-12 mt-3 mx-auto">
+      <div class="col-md-12 col-lg-12 col-xl-12 mt-3 mx-auto">
         <div class="top_btns">
           <NavLink
             class="d-block d-sm-inline-block add_new_btn"
@@ -103,7 +103,7 @@ function Home() {
                 Visa Pending (0)
               </button>
             </NavLink>
-            <div className="rounded-pill border-black  d-flex border">
+            <div className="rounded-pill border-black  d-flex border searchField">
               <i
                 class="fa fa-search py-3 ps-3 text-black"
                 aria-hidden="true"
@@ -160,7 +160,7 @@ function Home() {
                 <h6>Agent To Name</h6>
               </div>
             </div>
-            <div className="flex ">
+            <div className="flex justify-content-evenly">
               {steps?.map((step, i) => (
                 <div
                   key={i}

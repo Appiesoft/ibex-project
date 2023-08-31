@@ -15,6 +15,7 @@ import UserRoles from "../sidebarPages/userRoles/UserRoles";
 import AddNewPrimaryAgents from "../sidebarPages/primaryAgents/addNewPrimaryAgents/AddNewPrimaryAgents";
 import EditPrimaryAgents from "../sidebarPages/primaryAgents/editPrimaryAgents/EditPrimaryAgents";
 import DetailPrimaryAgents from "../sidebarPages/primaryAgents/detailPrimaryAgents/DetailPrimaryAgents";
+import Computs from "../user/login/practice/Computs";
 
 function Dashboard() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -31,7 +32,7 @@ function Dashboard() {
         OpenSidebar={OpenSidebar}
       />
       <Routes>
-        <Route index element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/my-profile" element={<MyProfile />} />
         <Route path="/students" element={<Students />} />
         <Route exact path="/user-details" element={<UsersTable />} />

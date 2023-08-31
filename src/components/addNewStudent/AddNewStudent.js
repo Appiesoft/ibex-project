@@ -81,8 +81,8 @@ const AddNewStudent = () => {
 
   return (
     <>
-      <main className="main-container">
-        <div className="flex pt-5 justify-content-center">
+      <main className="main-container"> 
+        <div className="flex pt-5 justify-content-center bubblebar">
           {steps?.map((step, i) => (
             <div
               key={i}
@@ -100,8 +100,8 @@ const AddNewStudent = () => {
         {!complete && (
           <div class="sav-mainbody m-3">
             <Row>
-              <Form className="d-flex">
-                <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9 prof-lft">
+              <Form className="d-flex flex-wrap">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 prof-lft ">
                   <div class="color-div ">
                     <div class="row">
                       <fieldset>
@@ -131,7 +131,7 @@ const AddNewStudent = () => {
                                 <Row>
                                   <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 name-lft">
                                     <p>
-                                      <Form.Group className="d-flex">
+                                      <Form.Group className="name-left-two">
                                         <Form.Label>First Name :</Form.Label>
                                         <Form.Control
                                           required
@@ -145,7 +145,7 @@ const AddNewStudent = () => {
                                     </p>
 
                                     <p>
-                                      <Form.Group className="d-flex">
+                                      <Form.Group className="name-left-two">
                                         <Form.Label>Last Name :</Form.Label>
                                         <Form.Control
                                           required
@@ -158,7 +158,7 @@ const AddNewStudent = () => {
                                     </p>
 
                                     <p>
-                                      <Form.Group className="d-flex">
+                                      <Form.Group className="name-left-two">
                                         <Form.Label>Date Of Birth :</Form.Label>
                                         <Form.Control
                                           required
@@ -170,7 +170,7 @@ const AddNewStudent = () => {
                                       </Form.Group>
                                     </p>
                                     <p>
-                                      <Form.Group className="d-flex">
+                                      <Form.Group className="name-left-two">
                                         <Form.Label>
                                           Passport Number:
                                         </Form.Label>
@@ -187,7 +187,7 @@ const AddNewStudent = () => {
                                   </div>
                                   <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 name-rgt position-relative">
                                     <p>
-                                      <Form.Group className="d-flex">
+                                      <Form.Group className="name-left-two">
                                         <Form.Label>University</Form.Label>
                                         <Form.Select
                                           name="university"
@@ -202,7 +202,7 @@ const AddNewStudent = () => {
                                       </Form.Group>
                                     </p>
                                     <p>
-                                      <Form.Group className="d-flex">
+                                      <Form.Group className="name-left-two">
                                         <Form.Label>
                                           Primary Agent Name :
                                         </Form.Label>
@@ -219,7 +219,7 @@ const AddNewStudent = () => {
                                       </Form.Group>
                                     </p>
                                     <p>
-                                      <Form.Group className="d-flex">
+                                      <Form.Group className="name-left-two">
                                         <Form.Label>
                                           Sub Agent Name :
                                         </Form.Label>
@@ -245,8 +245,8 @@ const AddNewStudent = () => {
                                 <div class="row">
                                   <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 name-lft">
                                     <p>
-                                      <Form.Group className="d-flex justify-content-lg-around">
-                                        <Form.Label className="w-25">
+                                      <Form.Group className="name-left-two">
+                                        <Form.Label className="form-label-Processing">
                                           Select Processing User:
                                         </Form.Label>
                                         <Form.Select
@@ -268,12 +268,12 @@ const AddNewStudent = () => {
                             </div>
                           </div>
                         </div>
-                        <Row className="my-3 me-2">
-                          <Col className="d-flex justify-content-end">
-                            <button className="p-2 bg-cyan-500 text-white rounded-1 text-lg font-bold px-3">
+                        <Row className="my-3 me-2 ms-2 ms-lg-0">
+                          <Col className="d-lg-flex justify-content-lg-end justify-content-start">
+                            <button className="p-2 bg-cyan-500 text-white rounded-1 text-lg text-sm font-bold px-3">
                               Save
                             </button>
-                            <button className="p-2 bg-cyan-500 text-white rounded-1 text-lg ms-2 font-bold">
+                            <button className="p-2 bg-cyan-500 text-white rounded-1 text-lg ms-lg-2 ms-md-3 ms-0 mt-3 mt-lg-0  text-sm font-bold">
                               {`Step ${currentStep} `}
                               {currentStep === steps.length
                                 ? "Finish"
@@ -285,7 +285,7 @@ const AddNewStudent = () => {
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 prof-rgt">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 prof-rgt">
                   <div class="color-div2">
                     <h2>Notes</h2>
                     <div class="col-md-12">

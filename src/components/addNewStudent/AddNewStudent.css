@@ -1,4 +1,6 @@
-
+.bubblebar{
+    width: max-content;
+}
 .step-item:not(:first-child)::before {
     content: '';
     background-color:lightgray; /* Use the appropriate color code for red-200 */
@@ -44,6 +46,9 @@
  .prof-lft {
     padding: 0px 0px 0px 15px;
     margin: 10px 0px;
+}
+.name-left-two{
+    display: flex;
 }
  .color-div {
     border: 1px solid #ccc !important;
@@ -174,4 +179,15 @@ div #accordion h4 {
     text-align: left;
     margin: 8px 0;
     font-weight: 600;
+}
+.form-label-Processing{
+    width:25% !important;
+}
+@media only screen and (min-width: 0px) and (max-width: 1024px){
+    .name-left-two{
+        flex-direction: column !important;
+    }
+    .form-label-Processing{
+        width:100% !important;
+    }
 }

@@ -11,8 +11,8 @@ const AddNewPrimaryAgents = () => {
           </Form.Label>
           <Form className="border-top mb-3">
             <Row className="pt-3">
-              <Col lg={6} >
-                <Row >
+              <Col lg={6}>
+                <Row>
                   <Form.Group className="d-flex justi ">
                     <div class="col-sm-4">
                       <Form.Label>Primary Agent Name</Form.Label>{" "}
@@ -42,7 +42,7 @@ const AddNewPrimaryAgents = () => {
                     </div>
                   </Form.Group>
                 </Row>
-                <Row >
+                <Row>
                   <Form.Group className="d-flex justi ">
                     <div class="col-sm-4">
                       <Form.Label>Primary Agent Phone</Form.Label>{" "}
@@ -59,7 +59,7 @@ const AddNewPrimaryAgents = () => {
                 </Row>
               </Col>
               <Col lg={6}>
-              <Row >
+                <Row>
                   <Form.Group className="d-flex justi ">
                     <div class="col-sm-4">
                       <Form.Label>Primary Agent City</Form.Label>{" "}
@@ -80,33 +80,29 @@ const AddNewPrimaryAgents = () => {
                       <Form.Label>Primary Agent Country</Form.Label>{" "}
                     </div>
                     <div class="col-sm-8">
-                    <Form.Select
-                                          name="university"
-                                          defaultValue="Choose..."
-                                        >
-                                          <option hidden>--Select Country--</option>
-                                          <option value="1">Swinburne</option>
-                                          <option value="2">Swinburne</option>
-                                        </Form.Select>
+                      <Form.Select name="university" defaultValue="Choose...">
+                        <option hidden>--Select Country--</option>
+                        <option value="1">Swinburne</option>
+                        <option value="2">Swinburne</option>
+                      </Form.Select>
                     </div>
                   </Form.Group>
                 </Row>
               </Col>
             </Row>
-            <Row className="my-3 me-2 border-top"> 
-                          <Col className="d-flex justify-content-start pt-3">
-                            <button className="p-2 bg-zinc-600 text-white rounded-1 text-lg  px-3">
-                              Cancel
-                            </button>
-                            <button className="p-2 bg-cyan-500 text-white rounded-1 text-lg ms-2 ">
-                         Save
-                            </button>
-                          </Col>
-                        </Row>
+            <Row className="my-3 me-2 border-top">
+              <Col className="d-flex justify-content-start pt-3">
+                <button className="p-2 bg-zinc-600 text-white rounded-1 text-sm  px-3">
+                  Cancel
+                </button>
+                <button className="p-2 bg-cyan-500 text-white rounded-1 text-sm ms-2 ">
+                  Save
+                </button>
+              </Col>
+            </Row>
           </Form>
         </Card.Body>
       </Card>
-     
     </main>
   );
 };

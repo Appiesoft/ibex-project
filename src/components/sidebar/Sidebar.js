@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import logonew from "../../Images/logonew.jpg";
 import './Sidebar.css'
 function Sidebar({ openSidebarToggle, OpenSidebar }) {
+
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -18,7 +19,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           <img src={logonew} alt="" />
         </div>
         <span className="icon close_icon" onClick={OpenSidebar}>
-          X
+        <i class="fa fa-times" aria-hidden="true"></i>
         </span>
       </div>
 
@@ -31,7 +32,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
         <li className={` ${!isOpen ? "boxinactive sidebar-list-item" : "boxactive sidebar-list-item"}`} onClick={toggleDropdown} >
           <NavLink className="d-flex justify-content-between">
           <span><i class="fa fa-home me-3"></i>Students</span>
-              <i className={` ${!isOpen ? "fa fa-angle-down" : "fa fa-angle-up"}`}></i>
+              <i className={` ${!isOpen ? "fa fa-angle-down me-3" : "fa fa-angle-up me-3"}`}></i>
           </NavLink>
         </li>
         {isOpen && (

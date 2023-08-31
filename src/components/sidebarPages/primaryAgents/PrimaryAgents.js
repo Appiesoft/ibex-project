@@ -9,7 +9,7 @@ const PrimaryAgents = () => {
   };
   return (
     <>
-       <main className="main-container">
+      <main className="main-container">
         <section>
           <NavLink
             className="d-block d-sm-inline-block add_new_btn"
@@ -20,7 +20,7 @@ const PrimaryAgents = () => {
               New Primary Agent
             </span>
           </NavLink>
-          <Row className=" mx-auto mt-5">
+          <Row className=" mx-auto mt-lg-5 mt-3 ">
             <div className="col-sm-12 col-md-6 ps-0">
               <div className="mt-3 w-25 " id="users-list_length">
                 <label className="d-flex align-baseline text-black">
@@ -39,7 +39,7 @@ const PrimaryAgents = () => {
                 </label>
               </div>
             </div>
-            <div className="col-sm-12 col-md-6 d-flex justify-content-end">
+            <div className="col-sm-12 col-md-6 d-flex justify-content-lg-end justify-content-sm-start ps-0 mt-3 mt-lg-0 ">
               <div className="dataTables_filter align-self-end">
                 <label className="d-flex align-baseline text-black">
                   Search:
@@ -53,81 +53,70 @@ const PrimaryAgents = () => {
               </div>
             </div>
           </Row>
-          <Table striped bordered className="mt-3 ">
-            <thead>
-              <tr>
-                <th>Primary Agent Name</th>
-                <th>Primary Agent Email</th>
-                <th>Primary Agent Phone</th>
-                <th>Primary Agent City</th>
-                <th>Primary Agent Country</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Admission 1</td>
-                <td>australia1@theibex.in</td>
-                <td>1236547889</td>
-                <td>Australia</td>
-                <td>Admission</td>
-                <td>
-                  <span
-                    onClick={toggleDropdown}
-                    className={` ${
-                      !isOpen
-                        ? "boxinactive bg-cyan-500 px-3 py-1 rounded-1 text-white"
-                        : "boxactive bg-cyan-500 px-3 py-1 rounded-1 text-white"
-                    }`}
-                  >
-                    <span>UniXplore</span>
-                    <i
-                      className={` ${
-                        !isOpen
-                          ? "fa-sharp fa-solid fa-caret-down ms-2"
-                          : "fa-sharp fa-solid fa-caret-up ms-2"
-                      }`}
-                    ></i>
-                    {isOpen && (
-                      <div className="position-absolute  m-3 btn-profile border">
-                        <h6
-                          className="px-3 py-2 m-0 hover:bg-zinc-100 text-slate-500"
-                        >
-                        <NavLink to="/edit-add-new-primary-agents">
-                          <span>
-                            <i class="fa fa-edit me-2" aria-hidden="true"></i>
-                          </span>
-                          Edit</NavLink>
-                        </h6>
-                        <h6
-                          className="px-3 py-2 m-0 hover:bg-zinc-100 text-slate-500"
-                        >
-                         <NavLink to="/details-primary-agents">
-                          <span>
-                            <i class="fa-solid fa-list me-2"></i>
-                          </span>
-                          Details</NavLink>
-                        </h6>
-                        <h6 className="px-3 py-2 m-0 hover:bg-zinc-100 text-slate-500">
-                          <span>
-                            <i class="fa-solid fa-trash me-2"></i>
-                          </span>
-                          Delete
-                        </h6>
+          <div className="overflow-auto table_container ">
+            <Table  striped bordered className="mt-3  table-sm ">
+              <thead>
+                <tr>
+                  <th>Primary Agent Name</th>
+                  <th>Primary Agent Email</th>
+                  <th>Primary Agent Phone</th>
+                  <th>Primary Agent City</th>
+                  <th>Primary Agent Country</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Admission 1</td>
+                  <td>australia1@theibex.in</td>
+                  <td>1236547889</td>
+                  <td>Australia</td>
+                  <td>Admission</td>
+                  <td>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn dropdown-toggle bgDrop"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        UniXplore
+                      </button>
+                      <div class="dropdown-menu">
+                        <div className="">
+                          <h6 className="px-3 py-2 m-0 hover:bg-zinc-100 text-slate-500">
+                            <NavLink to="/edit-add-new-primary-agents">
+                              <span>
+                                <i
+                                  class="fa fa-edit me-2"
+                                  aria-hidden="true"
+                                ></i>
+                              </span>
+                              Edit
+                            </NavLink>
+                          </h6>
+                          <h6 className="px-3 py-2 m-0 hover:bg-zinc-100 text-slate-500">
+                            <NavLink to="/details-primary-agents">
+                              <span>
+                                <i class="fa-solid fa-list me-2"></i>
+                              </span>
+                              Details
+                            </NavLink>
+                          </h6>
+                          <h6 className="px-3 py-2 m-0 hover:bg-zinc-100 text-slate-500">
+                            <span>
+                              <i class="fa-solid fa-trash me-2"></i>
+                            </span>
+                            Delete
+                          </h6>
+                        </div>
                       </div>
-                    )}
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-            <div>
-              {/* <UserEdit show={modalShow} onHide={() => setModalShow(false)} />
-              <UserDetails
-                show={modalDetailsShow}
-                onHide={() => setModalDetailsShow(false)}
-              /> */}
-            </div>
-          </Table>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
         </section>
       </main>
     </>
