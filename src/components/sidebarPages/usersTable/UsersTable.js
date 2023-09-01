@@ -82,61 +82,6 @@ const UsersTable = () => {
                   <td>Australia</td>
                   <td>Admission</td>
                   <td>
-                    {/* <span
-                      onClick={toggleDropdown}
-                      className={` ${
-                        !isOpen
-                          ? "boxinactive bg-cyan-500 px-3 py-1 rounded-1 text-white "
-                          : "boxactive bg-cyan-500 px-3 py-1 rounded-1 text-white"
-                      }`}
-                    >
-                      {" "}
-                      <span>Users</span>
-                      <i
-                        className={` ${
-                          !isOpen
-                            ? "fa-sharp fa-solid fa-caret-down ms-2"
-                            : "fa-sharp fa-solid fa-caret-up ms-2"
-                        }`}
-                      ></i>
-                      {isOpen && (
-                        <div className="position-absolute  m-3 btn-profile border">
-                          <h6
-                            className="px-3 py-2 m-0 hover:bg-zinc-100 text-slate-500"
-                            onClick={() => setModalShow(true)}
-                          >
-                            <span>
-                              <i class="fa fa-edit me-2" aria-hidden="true"></i>
-                            </span>
-                            Edit
-                          </h6>
-                          <h6
-                            className="px-3 py-2 m-0 hover:bg-zinc-100 text-slate-500"
-                            onClick={() => setModalDetailsShow(true)}
-                          >
-                            <span>
-                              <i class="fa-solid fa-list me-2"></i>
-                            </span>
-                            Details
-                          </h6>
-                          <h6 className="px-3 py-2 m-0 hover:bg-zinc-100 text-slate-500">
-                            <span>
-                              <i class="fa-solid fa-ban me-2"></i>
-                            </span>
-                            Ban
-                          </h6>
-                          <h6 className="px-3 py-2 m-0 hover:bg-zinc-100 text-slate-500">
-                            <span>
-                              <i class="fa-solid fa-trash me-2"></i>
-                            </span>
-                            Delete
-                          </h6>
-                          <h6 className="px-3 pt-2 pb-3 m-0 border-top hover:bg-zinc-100 text-slate-500">
-                            <span>Change Role</span>
-                          </h6>
-                        </div>
-                      )}
-                    </span> */}
                     <div class="dropdown">
                       <button
                         class="btn btn dropdown-toggle bgDrop"

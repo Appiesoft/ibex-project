@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { TiTick } from "react-icons/ti";
-import "./AddNewStudent.css";
 
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { submitStudentForm } from "../../redux/studentForm/actionStudentForm";
-const AddNewStudent = () => {
+import { submitStudentForm } from "../../../redux/studentForm/actionStudentForm";
+import user from "../../../Images/user.jpg";
+const ProccessingStudent = () => {
   const naviagte = useNavigate();
   const dispatch = useDispatch();
   const steps = [
@@ -140,6 +140,15 @@ const AddNewStudent = () => {
                                 <Row>
                                   <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 name-lft">
                                     <p>
+                                      <img src={user} alt="" />
+                                      <br />
+                                      <Form.Group>
+                                        <Form.Label>Choose File</Form.Label>
+                                        <Form.Control required type="file" />
+                                      </Form.Group>
+                                      <br />
+                                    </p>
+                                    <p>
                                       <Form.Group className="name-left-two">
                                         <Form.Label>First Name :</Form.Label>
                                         <Form.Control
@@ -165,6 +174,32 @@ const AddNewStudent = () => {
                                         />
                                       </Form.Group>
                                     </p>
+                                    <p>
+                                      <Form.Group className="name-left-two">
+                                        <Form.Label>Email :</Form.Label>
+                                        <Form.Control
+                                          required
+                                          name="email"
+                                          placeholder="example@.com"
+                                          value={formData.email}
+                                          onChange={handleInputChange}
+                                        />
+                                      </Form.Group>
+                                    </p>
+                                    <p>
+                                      <Form.Group className="name-left-two">
+                                        <Form.Label>
+                                          Contact Number :
+                                        </Form.Label>
+                                        <Form.Control
+                                          required
+                                          name="number"
+                                          placeholder="number"
+                                          value={formData.number}
+                                          onChange={handleInputChange}
+                                        />
+                                      </Form.Group>
+                                    </p>
 
                                     <p>
                                       <Form.Group className="name-left-two">
@@ -178,23 +213,23 @@ const AddNewStudent = () => {
                                         />
                                       </Form.Group>
                                     </p>
+                                  </div>
+                                  <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 name-rgt position-relative">
                                     <p>
                                       <Form.Group className="name-left-two">
                                         <Form.Label>
-                                          Passport Number:
+                                          Last Qualification :
                                         </Form.Label>
                                         <Form.Control
                                           required
-                                          name="passportNumber"
+                                          name="lastQualification"
                                           type="number"
                                           placeholder=" "
-                                          value={formData.passportNumber}
+                                          value={formData.lastQualification}
                                           onChange={handleInputChange}
                                         />
                                       </Form.Group>
                                     </p>
-                                  </div>
-                                  <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 name-rgt position-relative">
                                     <p>
                                       <Form.Group className="name-left-two">
                                         <Form.Label>University</Form.Label>
@@ -269,6 +304,40 @@ const AddNewStudent = () => {
                                             subAgent
                                           </option>
                                         </Form.Select>
+                                      </Form.Group>
+                                    </p>
+                                    <p>
+                                    <Form.Group className="mb-3 d-flex">
+                                      <Form.Label className="mt-3">
+                                        <b>Funds Available :</b>
+                                      </Form.Label>
+                                      <Row>
+                                      <Col lg={2} className="mx-auto d-flex">
+                                        <Form.Check
+                                          required
+                                          label="Yes"
+                                          feedback="You must agree before submitting."
+                                          feedbackType="invalid"
+                                          type="radio"
+                                        />
+                                        <Form.Check
+                                          required
+                                          label="No"
+                                          feedback="You must agree before submitting."
+                                          feedbackType="invalid"
+                                          type="radio"
+                                        />
+                                        <Form.Check
+                                          required
+                                          type="radio"
+                                          label="Other"
+                                          feedback="You must agree before submitting."
+                                          feedbackType="invalid"
+                                          className="mx-3"
+                                        />
+                                        </Col>
+                                      </Row>
+                                     
                                       </Form.Group>
                                     </p>
                                   </div>
@@ -363,4 +432,4 @@ const AddNewStudent = () => {
   );
 };
 
-export default AddNewStudent;
+export default ProccessingStudent;

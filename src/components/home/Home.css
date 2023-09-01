@@ -63,7 +63,7 @@
     flex-wrap: unset;
     /* column-gap: 44px; */
     margin: 0 0 15px 0;
-    justify-content: space-between;
+    justify-content: space-around;
 
 }
 .sav_txt1 span {

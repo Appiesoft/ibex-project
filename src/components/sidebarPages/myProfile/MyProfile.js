@@ -7,7 +7,7 @@ const MyProfile = () => {
  <Row className="mx-auto">
             
             <Col lg={12} className=" bg-slate-100">
-            <div className="bg-zinc-100 py-2 ps-3 text-black"><h3>Change Password</h3></div>
+            <div className="bg-zinc-100 py-2 ps-3 text-black text-xl"><h1>Change Password</h1></div>
                  <Form className=" px-3 border-top bg-white">
                  <Form.Group md="4" controlId="validationCustom01">
                    <Form.Label className="  text-black mt-3 mb-2  text-black">Old Password</Form.Label>
@@ -37,7 +37,7 @@ const MyProfile = () => {
                         Update
                        </button>
                </Form>
-               <div className="bg-zinc-100 py-2 ps-3 mt-5  text-black"><h3>Personal Details</h3></div>
+               <div className="bg-zinc-100 py-2 ps-3 mt-5  text-black text-xl"><h3>Personal Details</h3></div>
                <Form className=" px-3 border-top bg-white ">
                <Form.Group
                    md="4"

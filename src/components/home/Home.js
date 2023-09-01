@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import user from "../../Images/user.jpg";
 import "./Home.css";
 import { NavLink } from "react-router-dom";
 import { TiTick } from "react-icons/ti";
 
 import Footer from "../footer/Footer";
+import { api, endpoints } from "../../api/apiStudentsForm";
 function Home() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const steps = [
     "Addmissios",
     "Processing",
@@ -22,6 +26,20 @@ function Home() {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+  useEffect(() => {
+    const apiUrl = endpoints.students; // Use the endpoint from your api.js
+
+    api
+      .get(apiUrl)
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
   return (
     <main className="main-container">
       <div class="col-md-12 col-lg-12 col-xl-12 mt-3 mx-auto">
@@ -115,7 +133,6 @@ function Home() {
               />
             </div>
           </div>
-          
         </div>
       </div>
       <div class="mt-5">
@@ -126,39 +143,43 @@ function Home() {
             <h4>Student age is less than 18 </h4>
           </div>
           <div class="left3_div">
-            <div class="top_sav">
-              <div class="sav_txt1">
-                <span>Enr ID</span>
-                <h6>Ibex-0557</h6>
-              </div>
-              <div class="sav_txt1">
-                <span>Full Name</span>
-                <h6>shah rukh khan</h6>
-              </div>
-              <div class="sav_txt1">
-                <span>Father Namer</span>
-                <h6>Abdula khann sheikh</h6>
-              </div>
-              <div class="sav_txt1">
-                <span>Status</span>
-                <h6>Flagged To Processing</h6>
-              </div>
-              <div class="sav_txt1">
-                <span>GTE</span>
-                <h6>12434</h6>
-              </div>
-              <div class="sav_txt1">
-                <span>University</span>
-                <h6>Notre Dame</h6>
-              </div>
-              <div class="sav_txt1">
-                <span>Primary Agent Name </span>
-                <h6>Primary A</h6>
-              </div>
-              <div class="sav_txt1">
-                <span>Sub Agent Name </span>
-                <h6>Agent To Name</h6>
-              </div>
+            <div>
+              {data.map((item) => (
+                <div key={item.id} class="top_sav">
+                  <div class="sav_txt1">
+                    <span>Enr ID</span>
+                    <h6>Ibex-0557</h6>
+                  </div>
+                  <div class="sav_txt1">
+                    <span>Full Name</span>
+                    <h6>{item.firstName}</h6>
+                  </div>
+                  <div class="sav_txt1">
+                    <span>Father Namer</span>
+                    <h6>Abdula khann sheikh</h6>
+                  </div>
+                  <div class="sav_txt1">
+                    <span>Status</span>
+                    <h6>Flagged To Processing</h6>
+                  </div>
+                  <div class="sav_txt1">
+                    <span>GTE</span>
+                    <h6>12434</h6>
+                  </div>
+                  <div class="sav_txt1">
+                    <span>University</span>
+                    <h6>{item.university}</h6>
+                  </div>
+                  <div class="sav_txt1">
+                    <span>Primary Agent Name </span>
+                    <h6>{item.primaryAgent}</h6>
+                  </div>
+                  <div class="sav_txt1">
+                    <span>Sub Agent Name </span>
+                    <h6>{item.subAgent}</h6>
+                  </div>
+                </div>
+              ))}
             </div>
             <div className="flex justify-content-evenly">
               {steps?.map((step, i) => (
@@ -194,63 +215,55 @@ function Home() {
             )}
           </div>
 
-          <div class="left_div">
-            <div class="btn-group">
-              <i class="fa fa-user-secret text-cyan-500 me-4 pt-2 text-xl"></i>
-              <span
-                onClick={toggleDropdown}
-                className={` ${
-                  !isOpen
-                    ? "boxinactive pe-2 pt-2  bg-cyan-500 rounded-1"
-                    : "boxactive pe-2  pt-2 bg-cyan-500 rounded-1"
-                }`}
-              >
-                <i
-                  className={` ${
-                    !isOpen
-                      ? "fa-sharp fa-solid fa-caret-down ms-2"
-                      : "fa-sharp fa-solid fa-caret-up ms-2"
-                  }`}
-                ></i>
-              </span>
-              {isOpen && (
-                <div className="position-absolute  m-3 profileBtn border">
-                  <h6 className="px-3 py-2 m-0 hover:bg-zinc-100">
-                    <NavLink to="/my-profile">
-                      <span>
-                        <i class="fa fa-edit me-2" aria-hidden="true"></i>
-                      </span>
-                      Edit
-                    </NavLink>
-                  </h6>
-                  <h6 className="px-3 py-2 m-0 hover:bg-zinc-100">
-                    <NavLink to="/login">
-                      <span>
-                        <i class="fa-solid fa-list me-2"></i>
-                      </span>
-                      Details
-                    </NavLink>
-                  </h6>
-
-                  <h6 className="px-3 py-2 m-0 hover:bg-zinc-100">
-                    <NavLink to="/login">
-                      <span>
-                        <i class="fa-solid fa-trash me-2"></i>
-                      </span>
-                      Delete
-                    </NavLink>
-                  </h6>
-                </div>
-              )}
+          <div class="left_div d-flex">
+            <i class="fa fa-user-secret text-cyan-500 me-4 pt-2 text-xl"></i>
+            <div class="dropdown">
+              <button
+                class="btn btn dropdown-toggle bgDrop"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              ></button>
+              <ul class="dropdown-menu">
+                <NavLink to="/my-profile">
+                  <li className="d-flex cursor-pointer">
+                    <span className="bg-light p-1 px-2 ms-3 ">
+                      <i
+                        className=" text-zinc-500 fa fa-pencil-square-o"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                    <h6 className="text-zinc-500 pt-1 ps-1">Edit</h6>
+                  </li>
+                </NavLink>
+                <NavLink to="/my-profile">
+                  <li className="d-flex cursor-pointer">
+                    <span className="bg-light p-1 px-2 ms-3">
+                      <i
+                        className=" text-zinc-500 fa fa-list"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                    <h6 className="text-zinc-500 pt-1 ps-1">Details</h6>
+                  </li>
+                </NavLink>
+                <li className="d-flex cursor-pointer">
+                  <span className="bg-light p-1 px-2 ms-3">
+                    <i
+                      className=" text-zinc-500 fa fa-trash"
+                      aria-hidden="true"
+                    ></i>
+                  </span>
+                  <h6 className="text-zinc-500 pt-2 ps-2">Delete</h6>
+                </li>
+              </ul>
             </div>
           </div>
-        
         </div>
-      
       </div>
-      <Footer/>
+
+      <Footer />
     </main>
-    
   );
 }
 

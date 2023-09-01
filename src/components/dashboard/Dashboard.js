@@ -15,7 +15,7 @@ import UserRoles from "../sidebarPages/userRoles/UserRoles";
 import AddNewPrimaryAgents from "../sidebarPages/primaryAgents/addNewPrimaryAgents/AddNewPrimaryAgents";
 import EditPrimaryAgents from "../sidebarPages/primaryAgents/editPrimaryAgents/EditPrimaryAgents";
 import DetailPrimaryAgents from "../sidebarPages/primaryAgents/detailPrimaryAgents/DetailPrimaryAgents";
-import Computs from "../user/login/practice/Computs";
+import ProccessingStudent from "../addNewStudent/proccessingStudent/ProccessingStudent";
 
 function Dashboard() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -44,6 +44,7 @@ function Dashboard() {
         <Route exact path="/add-new-primary-agents" element={<AddNewPrimaryAgents/>} />
         <Route exact path="/edit-add-new-primary-agents" element={<EditPrimaryAgents/>} />
         <Route exact path="/details-primary-agents" element={<DetailPrimaryAgents/>} />
+        <Route exact path="/proccessing-student" element={<ProccessingStudent/>} />
       </Routes>
     
     </div>
