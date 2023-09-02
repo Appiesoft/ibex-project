@@ -42,7 +42,7 @@ function Home() {
   }, []);
   return (
     <main className="main-container">
-      <div class="col-md-12 col-lg-12 col-xl-12 mt-3 mx-auto">
+      <div class="col-md-12 col-lg-12 col-xl-12 mt-3 mx-auto mb-5">
         <div class="top_btns">
           <NavLink
             class="d-block d-sm-inline-block add_new_btn"
@@ -135,16 +135,16 @@ function Home() {
           </div>
         </div>
       </div>
-      <div class="mt-5">
-        <div class="whole_box user-row py-2">
-          <div class="left2_div">
-            <img src={user} className="mx-auto" alt="profile" />
-            <h4>Ibex-0557</h4>
-            <h4>Student age is less than 18 </h4>
-          </div>
-          <div class="left3_div">
-            <div>
-              {data.map((item) => (
+      {data.map((item) => (
+        <div className="mt-3">
+          <div class="whole_box user-row py-2">
+            <div class="left2_div">
+              <img src={user} className="mx-auto" alt="profile" />
+              <h4>Ibex-0557</h4>
+              <h4>Student age is less than 18 </h4>
+            </div>
+            <div class="left3_div">
+              <div>
                 <div key={item.id} class="top_sav">
                   <div class="sav_txt1">
                     <span>Enr ID</span>
@@ -179,89 +179,88 @@ function Home() {
                     <h6>{item.subAgent}</h6>
                   </div>
                 </div>
-              ))}
-            </div>
-            <div className="flex justify-content-evenly">
-              {steps?.map((step, i) => (
-                <div
-                  key={i}
-                  className={`step-item relative flex flex-col  justify-center items-center w-36 ${
-                    currentStep === i + 1 && "active"
-                  } ${(i + 1 < currentStep || complete) && "complete"} `}
-                >
-                  <div className="step">
-                    {i + 1 < currentStep || complete ? (
-                      <TiTick size={24} />
-                    ) : (
-                      i + 1
-                    )}
+              </div>
+              <div className="flex justify-content-evenly">
+                {steps?.map((step, i) => (
+                  <div
+                    key={i}
+                    className={`step-item relative flex flex-col  justify-center items-center w-36 ${
+                      currentStep === i + 1 && "active"
+                    } ${(i + 1 < currentStep || complete) && "complete"} `}
+                  >
+                    <div className="step">
+                      {i + 1 < currentStep || complete ? (
+                        <TiTick size={24} />
+                      ) : (
+                        i + 1
+                      )}
+                    </div>
+                    <p className="text-gray-500 ">{step}</p>
                   </div>
-                  <p className="text-gray-500 ">{step}</p>
-                </div>
-              ))}
+                ))}
+              </div>
+              {!complete && (
+                <button
+                  className="btn"
+                  onClick={() => {
+                    currentStep === steps.length
+                      ? setComplete(true)
+                      : setCurrentStep((prev) => prev + 1);
+                  }}
+                >
+                  {currentStep === steps.length ? "Finish" : "Next"} ,
+                  {currentStep}
+                </button>
+              )}
             </div>
-            {!complete && (
-              <button
-                className="btn"
-                onClick={() => {
-                  currentStep === steps.length
-                    ? setComplete(true)
-                    : setCurrentStep((prev) => prev + 1);
-                }}
-              >
-                {currentStep === steps.length ? "Finish" : "Next"} ,
-                {currentStep}
-              </button>
-            )}
-          </div>
 
-          <div class="left_div d-flex">
-            <i class="fa fa-user-secret text-cyan-500 me-4 pt-2 text-xl"></i>
-            <div class="dropdown">
-              <button
-                class="btn btn dropdown-toggle bgDrop"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              ></button>
-              <ul class="dropdown-menu">
-                <NavLink to="/my-profile">
-                  <li className="d-flex cursor-pointer">
-                    <span className="bg-light p-1 px-2 ms-3 ">
-                      <i
-                        className=" text-zinc-500 fa fa-pencil-square-o"
-                        aria-hidden="true"
-                      ></i>
-                    </span>
-                    <h6 className="text-zinc-500 pt-1 ps-1">Edit</h6>
-                  </li>
-                </NavLink>
-                <NavLink to="/my-profile">
+            <div class="left_div d-flex">
+              <i class="fa fa-user-secret text-cyan-500 me-4 pt-2 text-xl"></i>
+              <div class="dropdown">
+                <button
+                  class="btn btn dropdown-toggle bgDrop"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                ></button>
+                <ul class="dropdown-menu">
+                  <NavLink to="/my-profile">
+                    <li className="d-flex cursor-pointer">
+                      <span className="bg-light p-1 px-2 ms-3 ">
+                        <i
+                          className=" text-zinc-500 fa fa-pencil-square-o"
+                          aria-hidden="true"
+                        ></i>
+                      </span>
+                      <h6 className="text-zinc-500 pt-1 ps-1">Edit</h6>
+                    </li>
+                  </NavLink>
+                  <NavLink to="/my-profile">
+                    <li className="d-flex cursor-pointer">
+                      <span className="bg-light p-1 px-2 ms-3">
+                        <i
+                          className=" text-zinc-500 fa fa-list"
+                          aria-hidden="true"
+                        ></i>
+                      </span>
+                      <h6 className="text-zinc-500 pt-1 ps-1">Details</h6>
+                    </li>
+                  </NavLink>
                   <li className="d-flex cursor-pointer">
                     <span className="bg-light p-1 px-2 ms-3">
                       <i
-                        className=" text-zinc-500 fa fa-list"
+                        className=" text-zinc-500 fa fa-trash"
                         aria-hidden="true"
                       ></i>
                     </span>
-                    <h6 className="text-zinc-500 pt-1 ps-1">Details</h6>
+                    <h6 className="text-zinc-500 pt-2 ps-2">Delete</h6>
                   </li>
-                </NavLink>
-                <li className="d-flex cursor-pointer">
-                  <span className="bg-light p-1 px-2 ms-3">
-                    <i
-                      className=" text-zinc-500 fa fa-trash"
-                      aria-hidden="true"
-                    ></i>
-                  </span>
-                  <h6 className="text-zinc-500 pt-2 ps-2">Delete</h6>
-                </li>
-              </ul>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
+      ))}
       <Footer />
     </main>
   );

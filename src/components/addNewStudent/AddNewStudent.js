@@ -76,7 +76,7 @@ const AddNewStudent = () => {
       if (formValidation) {
         // Dispatch the API call action
         dispatch(submitStudentForm(formData));
-        naviagte("/");
+        naviagte("/proccessing-student");
       } // Validate the form before proceeding
       else {
         alert("Please fill all required fields before proceeding.");
