@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { TiTick } from "react-icons/ti";
 import "./AddNewStudent.css";
-
+import { setSteps } from "../../redux/stepsSlice/stepsSlice";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { submitStudentForm } from "../../redux/studentForm/actionStudentForm";
+import { Step, StepLabel, Stepper } from "@mui/material";
 const AddNewStudent = () => {
   const naviagte = useNavigate();
   const dispatch = useDispatch();
@@ -20,8 +21,8 @@ const AddNewStudent = () => {
     "File lodgement & all",
     "Result",
   ];
-  const [currentStep, setCurrentStep] = useState(1);
-  const [complete, setComplete] = useState(false);
+  const [currentStep, setCurrentStep] = useState(0);
+
   const [formValidation, setFormValidation] = useState(false);
   const [isFormFilled, setIsFormFilled] = useState(false);
   const [formData, setFormData] = useState({
@@ -64,25 +65,24 @@ const AddNewStudent = () => {
   useEffect(() => {
     if (formValidation) {
       // Proceed to the next step here
+
       setCurrentStep((prev) => prev + 1);
     }
   }, [formValidation]);
 
   const handleNextClick = () => {
     if (currentStep === steps.length) {
-      return window.confirm("are you want to submit");
     } else {
       validateForm();
+
       if (formValidation) {
-        // Dispatch the API call action
         dispatch(submitStudentForm(formData));
-        naviagte("/proccessing-student");
-      } // Validate the form before proceeding
-      else {
-        alert("Please fill all required fields before proceeding.");
+      } else {
+        alert("Please Check All Field Before Submit");
       }
     }
   };
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -91,22 +91,14 @@ const AddNewStudent = () => {
   return (
     <>
       <main className="main-container">
-        <div className="flex pt-5 justify-content-center bubblebar">
-          {steps?.map((step, i) => (
-            <div
-              key={i}
-              className={`step-item relative flex flex-col justify-center items-center w-36 ${
-                currentStep === i + 1 && "active"
-              } ${(i + 1 < currentStep || complete) && "complete"} `}
-            >
-              <div className="step">
-                {i + 1 < currentStep || complete ? <TiTick size={24} /> : i + 1}
-              </div>
-              <p className="text-gray-500">{step}</p>
-            </div>
+        <Stepper alternativeLabel activeStep={currentStep}>
+          {steps.map((label) => (
+            <Step key={label}>
+              <StepLabel>{label}</StepLabel>
+            </Step>
           ))}
-        </div>
-        {!complete && (
+        </Stepper>
+      
           <div class="sav-mainbody m-3">
             <Row>
               <Form className="d-flex flex-wrap">
@@ -120,8 +112,10 @@ const AddNewStudent = () => {
                               <h3 class="asses-hdg">Admissions</h3>
                               <br />
                             </div>
-                            <div class="col-5">
-                              <h2 class="steps">Step 1 - 8</h2>
+                            <div class="col-5 ms-2">
+                              <h2 class="steps">
+                                {`Step ${currentStep} `} - 8
+                              </h2>
                             </div>
                           </div>
                           <div id="accordion">
@@ -307,10 +301,10 @@ const AddNewStudent = () => {
                         </div>
                         <Row className="my-3 me-2 ms-2 ms-lg-0">
                           <Col className="d-lg-flex justify-content-lg-end justify-content-start">
-                            <button className="p-2 bg-cyan-500 text-white rounded-1 text-lg text-sm font-bold px-3">
+                            <button className="p-2 bg-cyan-500 text-white rounded-1  text-sm font-bold px-3">
                               Save
                             </button>
-                            <button className="p-2 bg-cyan-500 text-white rounded-1 text-lg ms-lg-2 ms-md-3 ms-0 mt-3 mt-lg-0  text-sm font-bold">
+                            <button className="p-2 bg-cyan-500 text-white rounded-1  ms-lg-2 ms-md-3 ms-0 mt-3 mt-lg-0  text-sm font-bold">
                               {`Step ${currentStep} `}
                               {currentStep === steps.length
                                 ? "Finish"
@@ -349,7 +343,7 @@ const AddNewStudent = () => {
                         className="btn bg-secondary"
                         onClick={handleNextClick}
                       >
-                        {currentStep === steps.length ? "Finish" : "Next"}
+                        {currentStep === steps.length ? "Finish" : "Submit"}
                       </Button>
                     </p>
                   </div>
@@ -357,7 +351,7 @@ const AddNewStudent = () => {
               </Form>
             </Row>
           </div>
-        )}
+    
       </main>
     </>
   );

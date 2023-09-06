@@ -16,6 +16,8 @@ import AddNewPrimaryAgents from "../sidebarPages/primaryAgents/addNewPrimaryAgen
 import EditPrimaryAgents from "../sidebarPages/primaryAgents/editPrimaryAgents/EditPrimaryAgents";
 import DetailPrimaryAgents from "../sidebarPages/primaryAgents/detailPrimaryAgents/DetailPrimaryAgents";
 import ProccessingStudent from "../addNewStudent/proccessingStudent/ProccessingStudent";
+import OlApplied from "../addNewStudent/olApplied/OlApplied";
+import Index from "../addNewStudent/index/Index";
 
 function Dashboard() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -45,6 +47,8 @@ function Dashboard() {
         <Route exact path="/edit-add-new-primary-agents" element={<EditPrimaryAgents/>} />
         <Route exact path="/details-primary-agents" element={<DetailPrimaryAgents/>} />
         <Route exact path="/proccessing-student" element={<ProccessingStudent/>} />
+        <Route exact path="/ol-applied" element={<OlApplied/>} />
+        <Route exact path="/add-student" element={<Index/>} />
       </Routes>
     
     </div>

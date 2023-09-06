@@ -18,6 +18,10 @@
     align-items: center;
     /* column-gap: 98px; */
 }
+.mainDiv{
+   overflow-x: scroll;
+} 
+
 .whole_box {
     word-wrap: break-word;
     background-color: #fff;

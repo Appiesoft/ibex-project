@@ -42,5 +42,21 @@ export const api = {
       throw error;
     }
   },
+  
+  delete: async (url) => {
+    try {
+      const response = await fetch(url, {
+        method: "DELETE",
+      });
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  },
+
   // Add more HTTP methods (e.g., put, delete) as needed
 };
